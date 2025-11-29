@@ -1,16 +1,14 @@
 {
-    "geode": "4.9.0",
+    "geode": "4.10.0",
     "gd": {
         "android": "2.2074",
-        "win": "2.2074",
-        "mac": "2.2074",
-        "ios": "2.2074"
+        "win": "2.2074"
     },
-    "version": "v1.7.12",
-    "id": "hiimjustin000.integrated_demonlist",
-    "name": "Integrated Demonlist",
+    "version": "v1.0.0",
+    "id": "noyan.integratednoyansdemonslist",
+    "name": "Integrated Noyans Demons List",
     "developer": "hiimjasmine00",
-    "description": "Simple AREDL and Pemonlist integration.",
+    "description": "Simple Noyans Demons List integration.",
     "resources": {
         "files": [
             "resources/*.frag",

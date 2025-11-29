@@ -15,6 +15,12 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
+# Allow overriding the AREDL URL at configure time with -DAREDL_URL="https://...".
+if(NOT DEFINED AREDL_URL)
+    set(AREDL_URL "http://localhost:3000/api/list")
+endif()
+target_compile_definitions(${PROJECT_NAME} PRIVATE AREDL_URL=\"${AREDL_URL}\")
+
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
 else()

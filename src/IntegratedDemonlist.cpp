@@ -9,7 +9,13 @@ std::vector<IDListDemon> IntegratedDemonlist::pemonlist;
 bool IntegratedDemonlist::aredlLoaded = false;
 bool IntegratedDemonlist::pemonlistLoaded = false;
 
-constexpr const char* aredlUrl = "https://api.aredl.net/v2/api/aredl/levels";
+// The AREDL URL is configurable at build time via the `AREDl_URL` macro.
+// By default we use the local Next.js export at `/api/list` for development.
+#ifndef AREDL_URL
+constexpr const char* aredlUrl = "http://localhost:3000/api/list";
+#else
+constexpr const char* aredlUrl = AREDL_URL;
+#endif
 constexpr const char* aredlPacksUrl = "https://api.aredl.net/v2/api/aredl/pack-tiers";
 constexpr const char* pemonlistUrl = "https://pemonlist.com/api/list?limit=150&version=2";
 
