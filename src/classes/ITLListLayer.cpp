@@ -134,7 +134,7 @@ bool ITLListLayer::init() {
     menu->addChild(m_infoButton, 2);
 
     m_failure = [this](int code) {
-        FLAlertLayer::create(fmt::format("Load Failed ({})", code).c_str(), "Failed to load Turklist. Please try again later.", "OK")->show();
+        FLAlertLayer::create(fmt::format("Load Failed ({})", code).c_str(), "Failed to load Demonlist, tell that idiot to update the link! Please try again later.", "OK")->show();
         m_loadingCircle->setVisible(false);
     };
 
